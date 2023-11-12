@@ -160,9 +160,9 @@ const gameOver = () => {
 
 
 const gameLoop = () => {
-    clearInterval(loopId)
+    clearInterval(loopId);
 
-    ctx.clearRect(0, 0, 600, 600)
+    ctx.clearRect(0, 0, 600, 600);
     drawGrid();
     drawFood();
     moveSnake();
@@ -171,28 +171,28 @@ const gameLoop = () => {
     checkCollision();
 
     loopId = setTimeout(() => {
-        gameLoop()
+        gameLoop();
     }, 300);
 };
 
-gameLoop()
+gameLoop();
 
 document.addEventListener("keydown", ({ key }) => {
     
     if (key == "ArrowRight" && direction != "left") {
-        direction = "right"
+        direction = "right";
     }
 
     if (key == "ArrowLeft" && direction != "right") {
-        direction = "left"
+        direction = "left";
     }
 
     if (key == "ArrowUp" && direction != "down") {
-        direction = "up"
+        direction = "up";
     }
 
     if (key == "ArrowDown" && direction != "up") {
-        direction = "down"
+        direction = "down";
     }
 
 });
@@ -201,4 +201,7 @@ buttonPlay.addEventListener("click", () => {
     score.textContent = "0"; // Iniciar o score em 0
     menu.style.display = "none";
     canvas.style.filter = "none";
+    snake.length = 1;
+    direction = undefined;
+    gameLoop();
 });
