@@ -1,9 +1,19 @@
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 
+const audio = new Audio('./assets/audio.mp3')
+
 const size = 30;
 
-const snake = [{ x: 270, y: 240 }];
+const snake = [
+    { x: 270, y: 240 },
+    { x: 300, y: 240 },
+    { x: 330, y: 240 },
+    { x: 360, y: 240 },
+    { x: 390, y: 240 },
+    { x: 420, y: 240 }
+
+];
 
 const randomNumber = (min, max) => {
     return Math.round(Math.random() * (max - min) + min)
@@ -103,6 +113,7 @@ const checkEat = () => {
 
     if (head.x === food.x && head.y === food.y) {
         snake.push({ ...head})
+        audio.play()
         generateNewFoodPosition();
     }  
 };
@@ -113,6 +124,29 @@ const generateNewFoodPosition = () => {
     food.color = randomColor()
 }
  
+const checkCollision = () => {
+    const head = snake[snake.length - 1]
+    const canvasLimit = canvas.width - size
+    const neckIndex = snake.length - 2
+
+
+    const wallCollision = 
+       head.x < 0 || head.x > 570 || head.y < 0 || head.y > 570
+
+    
+    const selfCOllision = snake.find((position, index) => {
+        return index < neckIndex && position.x == head.x && position.y == head.y
+    }) 
+
+    if (wallCollision || selfCOllision) {
+        gameOver()
+    }
+}
+
+
+const gameOver = () => {
+    direction = undefined
+}
 
 
 const gameLoop = () => {
@@ -124,6 +158,7 @@ const gameLoop = () => {
     moveSnake();
     drawSnake();
     checkEat();
+    checkCollision();
 
     loopId = setTimeout(() => {
         gameLoop()
