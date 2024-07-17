@@ -12,7 +12,7 @@ Este projeto consiste na implementação do clássico jogo da cobrinha (Snake Ga
 - HTML5 Canvas para renderização gráfica.
 - JavaScript para lógica de jogo e interação com o usuário.
 - CSS para estilização e layout responsivo.
-- 
+
 ## Aprendizados
 Durante o desenvolvimento deste projeto, aprendi:
 
