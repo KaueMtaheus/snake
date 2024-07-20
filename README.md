@@ -29,7 +29,7 @@ Durante o desenvolvimento deste projeto, aprendi:
 4. Reinício: Após o fim do jogo, clique no botão "Restart" para iniciar uma nova partida.
 
 ## Visualização
-Para visualizar e jogar o Snake Game, clique aqui.
+Para visualizar e jogar o Snake Game https://kauemtaheus.github.io/snake/arquivos/index.html.
 
 ![Snakegif](arquivos/assets/snakegif2.gif)
 
