@@ -31,7 +31,7 @@ Durante o desenvolvimento deste projeto, aprendi:
 ## Visualização
 Para visualizar e jogar o Snake Game, clique aqui.
 
-![Snakegif](arquivos/assets/snakegif.gif)
+![Snakegif](arquivos/assets/snakegif2.gif)
 
 ## Próximos Passos
 - Implementar um sistema de níveis de dificuldade.
